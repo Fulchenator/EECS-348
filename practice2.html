@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <h1>Control the Font.</h1>
+</head>
+<style>
+    #paragraph {
+        border-style: solid;
+        border-width: 5px;
+    }
+</style>
+<body>
+    <div id="paragraph">
+        Paragraph to be altered.
+    </div>
+    <p>Border R(0-255)</p>
+    <input type="text" id="border_red" value="">
+    <br>
+    <p>Border G(0-255)</p>
+    <input type="text" id="border_green" value="">
+    <br>
+    <p>Border B(0-255)</p>
+    <input type="text" id="border_blue" value="">
+    <br>
+    Border Width: 
+    <br>
+    <input type="text" id="border_width" value="">
+    <br>
+    "Background R(0-255): "
+    <br>
+    <input type="text" id = "background_R" value="">
+    <br>
+    "Background G(0-255): "
+    <br>
+    <input type="text" id = "background_G" value="">
+    <br>
+    "Background B(0-255): "
+    <br>
+    <input type="text" id = "background_B" value="">
+    <br>
+    <script>
+        function button_paragraph() {
+        var border_red = document.getElementById("border_red").value;
+        var border_green = document.getElementById("border_green").value;
+        var border_blue = document.getElementById("border_blue").value;
+        var border_width = document.getElementById("border_width").value;
+        var background_R = document.getElementById("background_R").value;
+        var background_G = document.getElementById("background_G").value;
+        var background_B = document.getElementById("background_B").value;
+
+        var tag = document.getElementById("paragraph");
+        tag.style.borderColor = `rgb(${border_red},${border_green},${border_blue})`;
+        tag.style.borderWidth = border_width
+        tag.style.backgroundColor = `rgb(${background_R},${background_G},${background_B})`;
+        }
+    </script>
+    <button onclick="button_paragraph()">Swap the color</button>
+    <br>
+</body>
+</html>
